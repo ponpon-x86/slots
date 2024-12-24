@@ -3,6 +3,13 @@
 #include <iostream>
 #include "slot_machine.hpp"
 #include "graphics.hpp"
+
+#include "waiting.hpp"
+#include "spinning.hpp"
+#include "awarding.hpp"
+
+#include "reel.hpp"
+
 #include "SDL.h"
 
 class Game {

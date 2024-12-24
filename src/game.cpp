@@ -1,6 +1,11 @@
 #include "game.hpp"
 
-Game::Game() {
+Game::Game() :
+slot_machine(std::make_unique<Waiting>(std::vector<Reel>{
+    Reel({Reel::Symbol::STAR, Reel::Symbol::SQUARE, Reel::Symbol::CIRCLE}),
+    Reel({Reel::Symbol::STAR, Reel::Symbol::SQUARE, Reel::Symbol::CIRCLE}),
+    Reel({Reel::Symbol::STAR, Reel::Symbol::SQUARE, Reel::Symbol::CIRCLE})
+})) {
     SDL_Init(SDL_INIT_VIDEO);
 
     start();
@@ -16,23 +21,20 @@ void Game::start() {
 
 void Game::run() {
     while (running) {
-        SDL_Window *window = SDL_CreateWindow(
-            "SDL2Test",
-            SDL_WINDOWPOS_UNDEFINED,
-            SDL_WINDOWPOS_UNDEFINED,
-            640,
-            480,
-            0
-        );
+        
+        slot_machine.handle();
 
-        SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
-        SDL_RenderClear(renderer);
-        SDL_RenderPresent(renderer);
+        slot_machine.changeState<Spinning>(slot_machine.getReels());
 
-        SDL_Delay(3000);
+        slot_machine.handle();
 
-        SDL_DestroyWindow(window);
+        slot_machine.changeState<Awarding>(slot_machine.getReels());
+
+        slot_machine.handle();
+
+        slot_machine.changeState<Waiting>(slot_machine.getReels());
+
+        slot_machine.handle();
 
         running = false;
     }
