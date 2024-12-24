@@ -16,7 +16,11 @@ public:
     void delay() const;
 
     void pullLever();
-    void pushStopButton();
+    void pullLeverDown();
+    void resetLever();
+
+    void lightStopButton();
+    void killStopButton();
 
     SDL_Rect* getLeverRect();
     SDL_Rect* getStopButtonRect();
@@ -42,28 +46,12 @@ private:
         std::array<SDL_Rect, textures> dst;
         std::array<SDL_Texture*, textures> textures = { nullptr };
         size_t state = 0;
-        bool pulled = false;    
-        clock_t timer;
-
-        void reset() {
-            state = 0;
-            pulled = false;
-        }
     };
 
     struct Machine {
         std::array<SDL_Rect, textures> dst;
         std::array<SDL_Texture*, textures> textures = { nullptr };
         size_t state = 0;
-        bool stop_button_active = false;
-        bool stop_button_pressed = false;
-        clock_t timer;
-
-        void reset() {
-            state = 0;
-            stop_button_active = false;
-            stop_button_pressed = false;
-        }
     };
     SDL_Rect stop_button;
 

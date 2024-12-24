@@ -16,7 +16,9 @@ public:
     template <typename StateType>
     void changeState(const std::vector<Reel>& reels);
 
-    std::vector<Reel> getReels() { return current_state->getReels(); };
+    std::vector<Reel> getReels() const { return current_state->getReels(); };
+
+    std::vector<Reel::Symbol> getReelSymbols() const;
 private:
     std::unique_ptr<State> current_state;
 };

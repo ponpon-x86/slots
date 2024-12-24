@@ -145,36 +145,14 @@ void Graphics::display() {
     // the background,
     SDL_RenderCopy(renderer, background, nullptr, nullptr);
 
-    // the lever,
-    if (lever.pulled) {
-        lever.state = 1; // TODO: replace with enum
-        if((double)(clock() - lever.timer)/CLOCKS_PER_SEC >= 1) {
-            lever.state = 2;
-        }
-    }
-
+    // the lever
     SDL_RenderCopy(
         renderer, 
         lever.textures.at(lever.state), 
         nullptr, 
         &lever.dst.at(lever.state));
         
-    // the machine,
-    if (lever.state == 2) {
-        if (machine.stop_button_pressed) {
-            machine.stop_button_active = false;
-            machine.state = 0;
-
-            if((double)(clock() - machine.timer)/CLOCKS_PER_SEC >= 1) {
-                lever.reset();
-                machine.reset();
-            }
-        } else {
-            machine.stop_button_active = true;
-            machine.state = 1;
-        }
-    }
-
+    // the machine
     SDL_RenderCopy(
         renderer, 
         machine.textures.at(machine.state), 
@@ -194,20 +172,24 @@ void Graphics::display() {
     SDL_RenderPresent(renderer);
 }
 
-void Graphics::pullLever() {
-    if (lever.state == 0) {
-        lever.timer = clock();
-        lever.pulled = true;
-    }
+void Graphics::resetLever() {
+    lever.state = 0;
 }
 
-void Graphics::pushStopButton() {
-    if (machine.state == 1) {
-        machine.timer = clock();
-        machine.stop_button_active = false;
-        machine.stop_button_pressed = true;
-        machine.state = 0;
-    }
+void Graphics::pullLever() {
+    lever.state = 1;
+}
+
+void Graphics::pullLeverDown() {
+    lever.state = 2;
+}
+
+void Graphics::lightStopButton() {
+    machine.state = 1;
+}
+
+void Graphics::killStopButton() {
+    machine.state = 0;
 }
 
 void Graphics::delay() const {

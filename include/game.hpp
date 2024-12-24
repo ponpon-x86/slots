@@ -4,6 +4,7 @@
 #include "slot_machine.hpp"
 #include "graphics.hpp"
 #include "event_handler.hpp"
+#include "timer.hpp"
 
 #include "waiting.hpp"
 #include "spinning.hpp"
@@ -22,8 +23,12 @@ private:
     SlotMachine slot_machine;
     Graphics graphics;
     EventHandler event_handler;
+    Timer timer;
 
     bool running = true;
+    
+    bool stoppable = false;
+    bool stopped = false;
 
     void run();
 

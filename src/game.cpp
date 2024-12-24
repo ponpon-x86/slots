@@ -22,29 +22,50 @@ void Game::start() {
 void Game::run() {
     while (running) {
         graphics.display();
-        handle();
+        this->handle();
+        slot_machine.handle();
         graphics.delay();
     }
 }
 
 void Game::handle() {
-    auto polled = event_handler.poll();
-    switch(polled) {
+    auto game_event = event_handler.poll();
+    switch(game_event) {
         case EventHandler::Event::QUIT:
-        this->running = false;
-        break;
+            this->running = false;
+            break;
 
         case EventHandler::Event::LEVER_PULLED:
-        graphics.pullLever();
-        break;
+            graphics.pullLever();
+            timer.startLeverTimer();
+            slot_machine.changeState<Spinning>(slot_machine.getReels());
+            break;
 
         case EventHandler::Event::STOP_BUTTON_PRESSED:
-        graphics.pushStopButton();
-        break;
+            if (this->stoppable) {
+                stoppable = false;
+                stopped = true;
+                timer.startMachineTimer();
+                graphics.killStopButton();
+                slot_machine.changeState<Awarding>(slot_machine.getReels());
+            }
+            break;
 
         case EventHandler::Event::MOUSE_PRESSED:
         case EventHandler::Event::NOTHING:
         default:
-        break;
+            break;
+    }
+
+    auto timer_event = timer.handle();
+    switch (timer_event) {
+        case Timer::Event::LEVER_EXPIRED:
+            graphics.pullLeverDown();
+            graphics.lightStopButton();
+            this->stoppable = true;
+            break;
+        case Timer::Event::MACHINE_EXPIRED:
+            graphics.resetLever();
+            break;
     }
 }
