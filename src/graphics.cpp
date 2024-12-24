@@ -50,18 +50,18 @@ void Graphics::create() {
 }
 
 void Graphics::loadTextures() {
-    background = IMG_LoadTexture(renderer, "../../../assets/background.png");
+    background = IMG_LoadTexture(renderer, "../../../assets/imgs/background.png");
 
     if (background == nullptr) {
-        std::cout << "\tSDL_image: failed to load ../../../assets/background.png.\n";
+        std::cout << "\tSDL_image: failed to load ../../../assets/imgs/background.png.\n";
     } else {
         std::cout << "\tLoaded background image.\n";
     }
 
-    shadows.shadows = IMG_LoadTexture(renderer, "../../../assets/shadows.png");
+    shadows.shadows = IMG_LoadTexture(renderer, "../../../assets/imgs/shadows.png");
 
     if (shadows.shadows == nullptr) {
-        std::cout << "\tSDL_image: failed to load ../../../assets/shadows.png.\n";
+        std::cout << "\tSDL_image: failed to load ../../../assets/imgs/shadows.png.\n";
     } else {
         std::cout << "\tLoaded shadows for reels; ";
         int w, h;
@@ -71,9 +71,9 @@ void Graphics::loadTextures() {
     }
 
     for (int i = 0; i < textures; ++i) {
-        machine.textures.at(i) = IMG_LoadTexture(renderer, ("../../../assets/machine_" + std::to_string(i) + ".png").c_str());
+        machine.textures.at(i) = IMG_LoadTexture(renderer, ("../../../assets/imgs/machine_" + std::to_string(i) + ".png").c_str());
         if (machine.textures.at(i) == nullptr) {
-            std::cout << "\tSDL_image: failed to load ../../../assets/machine_" + std::to_string(i) + ".png.\n";
+            std::cout << "\tSDL_image: failed to load ../../../assets/imgs/machine_" + std::to_string(i) + ".png.\n";
         } else {
             std::cout << "\tLoaded machine_" + std::to_string(i) + ".png; ";
             int w, h;
@@ -82,9 +82,9 @@ void Graphics::loadTextures() {
             std::cout << "w: " << w << ", h: " << h << ".\n";
         }
 
-        lever.textures.at(i) = IMG_LoadTexture(renderer, ("../../../assets/lever_" + std::to_string(i) + ".png").c_str());
+        lever.textures.at(i) = IMG_LoadTexture(renderer, ("../../../assets/imgs/lever_" + std::to_string(i) + ".png").c_str());
         if (lever.textures.at(i) == nullptr) {
-            std::cout << "\tSDL_image: failed to load ../../../assets/lever_" + std::to_string(i) + ".png.\n";
+            std::cout << "\tSDL_image: failed to load ../../../assets/imgs/lever_" + std::to_string(i) + ".png.\n";
         } else { 
             std::cout << "\tLoaded lever_" + std::to_string(i) + ".png; ";
             int w, h;
@@ -94,7 +94,18 @@ void Graphics::loadTextures() {
         }
     }
 
+    // a small button on the front panel of the machine
+    stop_button = SDL_Rect({441, 438, 65, 15});
+
     std::cout << "\n";
+}
+
+SDL_Rect* Graphics::getLeverRect() {
+    return &lever.dst.front();
+}
+
+SDL_Rect* Graphics::getStopButtonRect() {
+    return &stop_button;
 }
 
 void Graphics::setRenderTarget() {
@@ -135,6 +146,13 @@ void Graphics::display() {
     SDL_RenderCopy(renderer, background, nullptr, nullptr);
 
     // the lever,
+    if (lever.pulled) {
+        lever.state = 1; // TODO: replace with enum
+        if((double)(clock() - lever.timer)/CLOCKS_PER_SEC >= 1) {
+            lever.state = 2;
+        }
+    }
+
     SDL_RenderCopy(
         renderer, 
         lever.textures.at(lever.state), 
@@ -142,6 +160,21 @@ void Graphics::display() {
         &lever.dst.at(lever.state));
         
     // the machine,
+    if (lever.state == 2) {
+        if (machine.stop_button_pressed) {
+            machine.stop_button_active = false;
+            machine.state = 0;
+
+            if((double)(clock() - machine.timer)/CLOCKS_PER_SEC >= 1) {
+                lever.reset();
+                machine.reset();
+            }
+        } else {
+            machine.stop_button_active = true;
+            machine.state = 1;
+        }
+    }
+
     SDL_RenderCopy(
         renderer, 
         machine.textures.at(machine.state), 
@@ -159,6 +192,22 @@ void Graphics::display() {
 
     // at last, present renderer
     SDL_RenderPresent(renderer);
+}
+
+void Graphics::pullLever() {
+    if (lever.state == 0) {
+        lever.timer = clock();
+        lever.pulled = true;
+    }
+}
+
+void Graphics::pushStopButton() {
+    if (machine.state == 1) {
+        machine.timer = clock();
+        machine.stop_button_active = false;
+        machine.stop_button_pressed = true;
+        machine.state = 0;
+    }
 }
 
 void Graphics::delay() const {
