@@ -3,6 +3,7 @@
 #include <iostream>
 #include "slot_machine.hpp"
 #include "graphics.hpp"
+#include "event_handler.hpp"
 
 #include "waiting.hpp"
 #include "spinning.hpp"
@@ -20,8 +21,11 @@ public:
 private:
     SlotMachine slot_machine;
     Graphics graphics;
+    EventHandler event_handler;
 
     bool running = true;
 
     void run();
+
+    void handle();
 };

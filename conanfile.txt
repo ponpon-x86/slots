@@ -1,5 +1,6 @@
 [requires]
-sdl/2.30.9
+sdl/2.28.3
+sdl_image/2.8.2
 [generators]
 CMakeDeps
 CMakeToolchain
