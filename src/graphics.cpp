@@ -58,6 +58,30 @@ void Graphics::loadTextures() {
         std::cout << "\tLoaded background image.\n";
     }
 
+    star = IMG_LoadTexture(renderer, "../../../assets/imgs/star.png");
+
+    if (star == nullptr) {
+        std::cout << "\tSDL_image: failed to load ../../../assets/imgs/star.png.\n";
+    } else {
+        std::cout << "\tLoaded star token.\n";
+    }
+
+    square = IMG_LoadTexture(renderer, "../../../assets/imgs/square.png");
+
+    if (star == nullptr) {
+        std::cout << "\tSDL_image: failed to load ../../../assets/imgs/square.png.\n";
+    } else {
+        std::cout << "\tLoaded square token.\n";
+    }
+
+    circle = IMG_LoadTexture(renderer, "../../../assets/imgs/circle.png");
+
+    if (star == nullptr) {
+        std::cout << "\tSDL_image: failed to load ../../../assets/imgs/circle.png.\n";
+    } else {
+        std::cout << "\tLoaded circle token.\n";
+    }
+
     shadows.shadows = IMG_LoadTexture(renderer, "../../../assets/imgs/shadows.png");
 
     if (shadows.shadows == nullptr) {
@@ -131,6 +155,10 @@ Graphics::~Graphics() {
     for (auto& texture : lever.textures)
         SDL_DestroyTexture(texture);
 
+    SDL_DestroyTexture(star);
+    SDL_DestroyTexture(circle);
+    SDL_DestroyTexture(square);
+
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
 
@@ -159,7 +187,8 @@ void Graphics::display() {
         nullptr, 
         &machine.dst.at(machine.state));
     
-    // TODO: symbols on the reels
+    // symbols on the reels
+    
 
     // the shadows on the reels,
     SDL_RenderCopy(

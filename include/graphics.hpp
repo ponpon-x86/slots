@@ -4,6 +4,9 @@
 #include <array>
 #include <iostream>
 #include <fstream>
+
+#include "reel.hpp"
+
 #include "SDL.h"
 #include "SDL_image.h"
 
@@ -65,4 +68,8 @@ private:
     Machine machine;
 
     Shadows shadows;
+
+    SDL_Texture* star = nullptr;
+    SDL_Texture* square = nullptr;
+    SDL_Texture* circle = nullptr;
 };

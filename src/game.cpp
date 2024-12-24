@@ -36,9 +36,11 @@ void Game::handle() {
             break;
 
         case EventHandler::Event::LEVER_PULLED:
-            graphics.pullLever();
-            timer.startLeverTimer();
-            slot_machine.changeState<Spinning>(slot_machine.getReels());
+            if(!this->stoppable) {
+                graphics.pullLever();
+                timer.startLeverTimer();
+                slot_machine.changeState<Spinning>(slot_machine.getReels());
+            }
             break;
 
         case EventHandler::Event::STOP_BUTTON_PRESSED:

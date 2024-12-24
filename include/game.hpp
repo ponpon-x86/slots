@@ -26,7 +26,6 @@ private:
     Timer timer;
 
     bool running = true;
-    
     bool stoppable = false;
     bool stopped = false;
 
