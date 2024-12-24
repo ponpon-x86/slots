@@ -67,5 +67,7 @@ void Game::handle() {
         case Timer::Event::MACHINE_EXPIRED:
             graphics.resetLever();
             break;
+        default:
+            break;
     }
 }

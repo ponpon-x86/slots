@@ -20,7 +20,7 @@ public:
 private:
     struct Tirgger {
         clock_t timer;
-        bool activated;
+        bool activated = false;
     };
 
     Tirgger lever;
