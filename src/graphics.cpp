@@ -68,7 +68,7 @@ void Graphics::loadTextures() {
 
     square = IMG_LoadTexture(renderer, "../../../assets/imgs/square.png");
 
-    if (star == nullptr) {
+    if (square == nullptr) {
         std::cout << "\tSDL_image: failed to load ../../../assets/imgs/square.png.\n";
     } else {
         std::cout << "\tLoaded square token.\n";
@@ -76,7 +76,7 @@ void Graphics::loadTextures() {
 
     circle = IMG_LoadTexture(renderer, "../../../assets/imgs/circle.png");
 
-    if (star == nullptr) {
+    if (circle == nullptr) {
         std::cout << "\tSDL_image: failed to load ../../../assets/imgs/circle.png.\n";
     } else {
         std::cout << "\tLoaded circle token.\n";
@@ -120,6 +120,13 @@ void Graphics::loadTextures() {
 
     // a small button on the front panel of the machine
     stop_button = SDL_Rect({441, 438, 65, 15});
+
+    // reel tokens, centered
+    reel_tokens = { 
+        SDL_Rect({ 44, 174, token_dimensions, token_dimensions }),
+        SDL_Rect({ 204, 174, token_dimensions, token_dimensions }),
+        SDL_Rect({ 365, 174, token_dimensions, token_dimensions })
+    };
 
     std::cout << "\n";
 }
@@ -166,7 +173,7 @@ Graphics::~Graphics() {
     SDL_Quit(); // destroy sdl
 }
 
-void Graphics::display() {
+void Graphics::display(std::vector<Reel> reels) {
     start = SDL_GetTicks();
     // the rest of the visuals go here
 
@@ -188,7 +195,26 @@ void Graphics::display() {
         &machine.dst.at(machine.state));
     
     // symbols on the reels
-    
+    for (int i = 0; i < textures; ++i) {
+        SDL_Texture** texture;
+        auto token = reels.at(i).getSymbol();
+        switch(token) {
+            case Reel::Symbol::STAR:
+                texture = &star;
+                break;
+            case Reel::Symbol::CIRCLE:
+                texture = &circle;
+                break;
+            case Reel::Symbol::SQUARE:
+                texture = &square;
+                break;
+        }
+        SDL_RenderCopy(
+            renderer, 
+            *texture, 
+            nullptr, 
+            &reel_tokens.at(i));
+    }
 
     // the shadows on the reels,
     SDL_RenderCopy(

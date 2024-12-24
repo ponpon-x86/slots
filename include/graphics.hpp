@@ -15,7 +15,7 @@ public:
     Graphics();
     ~Graphics();
 
-    void display();
+    void display(std::vector<Reel> reels);
     void delay() const;
 
     void pullLever();
@@ -72,4 +72,6 @@ private:
     SDL_Texture* star = nullptr;
     SDL_Texture* square = nullptr;
     SDL_Texture* circle = nullptr;
+    const int token_dimensions = 133;
+    std::array<SDL_Rect, textures> reel_tokens;
 };

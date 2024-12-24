@@ -21,7 +21,7 @@ void Game::start() {
 
 void Game::run() {
     while (running) {
-        graphics.display();
+        graphics.display(slot_machine.getReels());
         this->handle();
         slot_machine.handle();
         graphics.delay();
