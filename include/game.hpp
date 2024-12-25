@@ -28,8 +28,9 @@ private:
     Sound sound;
 
     bool running = true;
-    bool stoppable = false;
-    bool stopped = false;
+
+    bool lever_forbidden = false;
+    bool stop_button_forbidden = true;
 
     enum ReelIndex {
         FIRST,

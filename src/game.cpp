@@ -38,7 +38,8 @@ void Game::handle() {
 
         case EventHandler::Event::LEVER_PULLED:
             slot_machine.start();
-            if(!this->stoppable) {
+            if(!this->lever_forbidden) {
+                this->lever_forbidden = true;
                 graphics.pullLever();
                 sound.playInitialPullSound();
                 timer.startLeverTimer();
@@ -50,9 +51,8 @@ void Game::handle() {
             break;
 
         case EventHandler::Event::STOP_BUTTON_PRESSED:
-            if (this->stoppable) {
-                stoppable = false;
-                stopped = true;
+            if (!this->stop_button_forbidden) {
+                this->stop_button_forbidden = true;
                 sound.playManualStopSound();
                 timer.startMachineTimer();
                 graphics.killStopButton();
@@ -75,7 +75,7 @@ void Game::handle() {
             sound.playFullPullSound();
             graphics.lightStopButton();
             timer.startCountdown();
-            this->stoppable = true;
+            this->stop_button_forbidden = false;
             break;
         case Timer::Event::MACHINE_EXPIRED:
             break;
@@ -105,13 +105,13 @@ void Game::handle() {
         }
         case Timer::Event::COUNTDOWN_FINISHED:
             sound.playAutoStopSound();
-            stoppable = false;
-            stopped = true;
+            // forbidden
             sound.playManualStopSound();
             timer.startMachineTimer();
             graphics.killStopButton();
             timer.startTwoStepTimer();
             slot_machine.stopReel(ReelIndex::FIRST);
+            this->stop_button_forbidden = true;
             break;
         case Timer::Event::AWARD:
         {
@@ -121,6 +121,7 @@ void Game::handle() {
             auto context = slot_machine.getContext();
             slot_machine.changeState<Waiting>(slot_machine.getReels());
             slot_machine.setContext(context);
+            this->lever_forbidden = false;
             break;
         }
         default:
