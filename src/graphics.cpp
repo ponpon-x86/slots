@@ -282,7 +282,7 @@ void Graphics::handle_tokens(std::array<double, textures> coefs) {
     }
 
     for (auto& token : reel_tokens) {
-        token.y = new_positions.front();
+        token.y = static_cast<int>(new_positions.front());
         new_positions.pop_front();
     }
 }

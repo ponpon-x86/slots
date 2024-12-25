@@ -24,5 +24,17 @@ protected:
     
     std::array<double, reel_count> spin_coefs = { .5f, .5f, .5f };
     std::array<bool, reel_count> spinning = { false, false, false };
+
+    double spinning_speed = 0.f;
+    double max_speed = .1f;
+    double velocity = 1.f;
+    double max_velocity = 10.f;
+
+    void resetSpeed() { 
+        spinning_speed = 0.f;
+        max_speed = .1f;
+        velocity = 1.f;
+        max_velocity = 10.f;
+    };
 private:
 };
