@@ -27,6 +27,9 @@ public:
     void lightStopButton();
     void killStopButton();
 
+    void lightMachine();
+    void killMachineLight();
+
     void handle_tokens(std::array<double, textures> coefs);
 
     SDL_Rect* getLeverRect();

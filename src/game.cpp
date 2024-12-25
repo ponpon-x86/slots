@@ -40,6 +40,7 @@ void Game::handle() {
             slot_machine.start();
             if(!this->stoppable) {
                 graphics.pullLever();
+                sound.playInitialPullSound();
                 timer.startLeverTimer();
 
                 auto context = slot_machine.getContext();
@@ -52,6 +53,7 @@ void Game::handle() {
             if (this->stoppable) {
                 stoppable = false;
                 stopped = true;
+                sound.playManualStopSound();
                 timer.startMachineTimer();
                 graphics.killStopButton();
                 timer.startTwoStepTimer();
@@ -69,6 +71,7 @@ void Game::handle() {
     switch (timer_event) {
         case Timer::Event::LEVER_EXPIRED:
             graphics.pullLeverDown();
+            sound.playFullPullSound();
             graphics.lightStopButton();
             this->stoppable = true;
             break;
@@ -76,14 +79,22 @@ void Game::handle() {
             break;
         case Timer::Event::STOP_FIRST_TICK:
             slot_machine.stopReel(ReelIndex::SECOND);
+            sound.playManualStopSound();
             break;
         case Timer::Event::STOP_SECOND_TICK:
             slot_machine.stopReel(ReelIndex::THIRD);
+            sound.playManualStopSound();
             timer.startCorrectionTimer();
             break;
         case Timer::Event::CORRECTION_FINISHED:
         {
             timer.startAwardTimer();
+            if (slot_machine.victoryCheck()) {
+                sound.playWinSound();
+                graphics.lightMachine();
+            } else {
+                sound.playLossSound();
+            }
 
             auto context = slot_machine.getContext();
             slot_machine.changeState<Awarding>(slot_machine.getReels());
@@ -93,6 +104,7 @@ void Game::handle() {
         case Timer::Event::AWARD:
         {
             graphics.resetLever();
+            graphics.killMachineLight();
 
             auto context = slot_machine.getContext();
             slot_machine.changeState<Waiting>(slot_machine.getReels());

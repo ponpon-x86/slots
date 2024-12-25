@@ -1,7 +1,7 @@
 #include "graphics.hpp"
 
 void Graphics::init() {
-    if(SDL_Init(SDL_INIT_VIDEO)) {
+    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO)) {
         std::cout << "\tSDL count not be initialized: " << SDL_GetError() << "\n";
         return;
     } else {
@@ -272,6 +272,14 @@ void Graphics::lightStopButton() {
 }
 
 void Graphics::killStopButton() {
+    machine.state = 0;
+}
+
+void Graphics::lightMachine() {
+    machine.state = 2;
+}
+
+void Graphics::killMachineLight() {
     machine.state = 0;
 }
 

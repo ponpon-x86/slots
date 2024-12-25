@@ -5,6 +5,7 @@
 #include "graphics.hpp"
 #include "event_handler.hpp"
 #include "timer.hpp"
+#include "sound.hpp"
 
 #include "waiting.hpp"
 #include "spinning.hpp"
@@ -24,6 +25,7 @@ private:
     Graphics graphics;
     EventHandler event_handler;
     Timer timer;
+    Sound sound;
 
     bool running = true;
     bool stoppable = false;

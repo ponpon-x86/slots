@@ -33,6 +33,8 @@ public:
     std::vector<Reel::Symbol> getReelSymbols() const;
 
     MachineState getState() const;
+
+    bool victoryCheck() const;
 private:
     std::unique_ptr<State> current_state;
 

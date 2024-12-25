@@ -21,3 +21,15 @@ SlotMachine::MachineState SlotMachine::getState() const {
 void SlotMachine::setContext(StateContext context) {
     current_state->setContext(context);
 }
+
+bool SlotMachine::victoryCheck() const {
+    std::vector<Reel::Symbol> syms;
+    for (auto& reel : getReels()) {
+        syms.push_back(reel.getSymbol());
+    }
+    Reel::Symbol symbol = syms.front();
+    for (auto& sym : syms) {
+        if (symbol != sym) return false;
+    }
+    return true;
+}
