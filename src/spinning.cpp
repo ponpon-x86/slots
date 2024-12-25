@@ -1,11 +1,6 @@
 #include "spinning.hpp"
 
 void Spinning::handle() {
-    // should this be here?
-    for (auto& spin : spinning) {
-        spin = true;
-    }
-
     spinning_speed = log(velocity) / 10;
     if (spinning_speed > max_speed) {
         spinning_speed = max_speed;

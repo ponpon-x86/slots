@@ -37,10 +37,14 @@ void Game::handle() {
             break;
 
         case EventHandler::Event::LEVER_PULLED:
+            slot_machine.start();
             if(!this->stoppable) {
                 graphics.pullLever();
                 timer.startLeverTimer();
+
+                auto context = slot_machine.getContext();
                 slot_machine.changeState<Spinning>(slot_machine.getReels());
+                slot_machine.setContext(context);
             }
             break;
 
@@ -50,7 +54,8 @@ void Game::handle() {
                 stopped = true;
                 timer.startMachineTimer();
                 graphics.killStopButton();
-                slot_machine.changeState<Awarding>(slot_machine.getReels());
+                timer.startTwoStepTimer();
+                slot_machine.stopReel(ReelIndex::FIRST);
             }
             break;
 
@@ -68,8 +73,28 @@ void Game::handle() {
             this->stoppable = true;
             break;
         case Timer::Event::MACHINE_EXPIRED:
-            graphics.resetLever();
             break;
+        case Timer::Event::STOP_FIRST_TICK:
+            slot_machine.stopReel(ReelIndex::SECOND);
+            break;
+        case Timer::Event::STOP_SECOND_TICK:
+        {
+            slot_machine.stopReel(ReelIndex::THIRD);
+            timer.startAwardTimer();
+            
+            auto context = slot_machine.getContext();
+            slot_machine.changeState<Awarding>(slot_machine.getReels());
+            slot_machine.setContext(context);
+            break;
+        }
+        case Timer::Event::AWARD:
+        {
+            graphics.resetLever();
+            auto context = slot_machine.getContext();
+            slot_machine.changeState<Waiting>(slot_machine.getReels());
+            slot_machine.setContext(context);
+            break;
+        }
         default:
             break;
     }

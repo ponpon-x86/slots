@@ -3,6 +3,7 @@
 #include <vector>
 #include <array>
 #include "reel.hpp"
+#include "struct.h"
 
 class State {
 public:
@@ -11,12 +12,32 @@ public:
     virtual ~State() {}
 
     virtual void handle() = 0;
+
+    virtual void start() = 0;
     
     std::vector<Reel> getReels() const { return reels; };
 
     std::array<double, 3> getSpinCoefs() const { return spin_coefs; };
 
     void stopReel(size_t index) { spinning.at(index) = false; }; 
+
+    StateContext getContext() { 
+        StateContext context;
+        context.reels = this->reels;
+        context.spin_coefs = this->spin_coefs;
+        context.spinning = this->spinning;
+        context.spinning_speed = this->spinning_speed;
+        context.velocity = this->velocity;
+        return context;
+    };
+
+    void setContext(StateContext context) {
+        this->reels = context.reels;
+        this->spin_coefs = context.spin_coefs;
+        this->spinning = context.spinning;
+        this->spinning_speed = context.spinning_speed;
+        this->velocity = context.velocity;
+    }
 protected:
     std::vector<Reel> reels;
 

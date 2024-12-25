@@ -4,6 +4,7 @@
 
 #include "state.hpp"
 #include "graphics.hpp"
+#include "struct.h"
 
 class SlotMachine {
 public:
@@ -25,6 +26,9 @@ public:
     std::vector<Reel> getReels() const { return current_state->getReels(); };
     std::array<double, 3> getSpinCoefs() const { return current_state->getSpinCoefs(); };
     void stopReel(size_t index) { return current_state->stopReel(index); }; 
+    void start() { return current_state->start(); };
+    StateContext getContext() const { return current_state->getContext(); };
+    void setContext(StateContext);
 
     std::vector<Reel::Symbol> getReelSymbols() const;
 

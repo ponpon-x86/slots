@@ -29,6 +29,12 @@ private:
     bool stoppable = false;
     bool stopped = false;
 
+    enum ReelIndex {
+        FIRST,
+        SECOND,
+        THIRD
+    };
+
     void run();
 
     void handle();

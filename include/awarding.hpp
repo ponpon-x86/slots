@@ -8,5 +8,7 @@ public:
     explicit Awarding(const std::vector<Reel>& reels) : State(reels) {}
 
     void handle() override;
+    
+    void start() override {};
 private:
 };

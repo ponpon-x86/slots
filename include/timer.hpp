@@ -10,6 +10,9 @@ public:
     enum class Event {
         LEVER_EXPIRED,
         MACHINE_EXPIRED,
+        STOP_FIRST_TICK,
+        STOP_SECOND_TICK,
+        AWARD,
         NOTHING
     };
 
@@ -17,12 +20,16 @@ public:
 
     void startLeverTimer();
     void startMachineTimer();
+    void startTwoStepTimer();
+    void startAwardTimer();
 private:
-    struct Tirgger {
+    struct Trigger {
         clock_t timer;
         bool activated = false;
     };
 
-    Tirgger lever;
-    Tirgger machine;
+    Trigger lever;
+    Trigger machine;
+    std::pair<Trigger, Trigger> two_step;
+    Trigger award;
 };

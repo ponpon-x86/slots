@@ -17,3 +17,7 @@ std::vector<Reel::Symbol> SlotMachine::getReelSymbols() const {
 SlotMachine::MachineState SlotMachine::getState() const {
     return state;
 }
+
+void SlotMachine::setContext(StateContext context) {
+    current_state->setContext(context);
+}
