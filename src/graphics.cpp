@@ -58,6 +58,14 @@ void Graphics::loadTextures() {
         std::cout << "\tLoaded background image.\n";
     }
 
+    plate = IMG_LoadTexture(renderer, "../../assets/imgs/plate.png");
+
+    if (plate == nullptr) {
+        std::cout << "\tSDL_image: failed to load ../../assets/imgs/plate.png.\n";
+    } else {
+        std::cout << "\tLoaded plate image.\n";
+    }
+
     star = IMG_LoadTexture(renderer, "../../assets/imgs/star.png");
 
     if (star == nullptr) {
@@ -80,6 +88,18 @@ void Graphics::loadTextures() {
         std::cout << "\tSDL_image: failed to load ../../assets/imgs/circle.png.\n";
     } else {
         std::cout << "\tLoaded circle token.\n";
+    }
+
+    reels.reels = IMG_LoadTexture(renderer, "../../assets/imgs/reels.png");
+
+    if (reels.reels == nullptr) {
+        std::cout << "\tSDL_image: failed to load ../../assets/imgs/reels.png.\n";
+    } else {
+        std::cout << "\tLoaded reels; ";
+        int w, h;
+        SDL_QueryTexture(reels.reels, nullptr, nullptr, &w, &h);
+        reels.dst = SDL_Rect({36, 65, w, h});
+        std::cout << "w: " << w << ", h: " << h << ".\n";
     }
 
     shadows.shadows = IMG_LoadTexture(renderer, "../../assets/imgs/shadows.png");
@@ -127,6 +147,8 @@ void Graphics::loadTextures() {
         SDL_Rect({ 204, 174, token_dimensions, token_dimensions }),
         SDL_Rect({ 365, 174, token_dimensions, token_dimensions })
     };
+
+    extended_reel_h = shadows.dst.h + token_dimensions * 2;
 
     std::cout << "\n";
 }
@@ -177,22 +199,11 @@ void Graphics::display(std::vector<Reel> reels) {
     start = SDL_GetTicks();
     // the rest of the visuals go here
 
-    // the background,
+    // the background
     SDL_RenderCopy(renderer, background, nullptr, nullptr);
 
-    // the lever
-    SDL_RenderCopy(
-        renderer, 
-        lever.textures.at(lever.state), 
-        nullptr, 
-        &lever.dst.at(lever.state));
-        
-    // the machine
-    SDL_RenderCopy(
-        renderer, 
-        machine.textures.at(machine.state), 
-        nullptr, 
-        &machine.dst.at(machine.state));
+    // the reels
+    SDL_RenderCopy(renderer, this->reels.reels, nullptr, &this->reels.dst);
     
     // symbols on the reels
     for (int i = 0; i < textures; ++i) {
@@ -222,6 +233,23 @@ void Graphics::display(std::vector<Reel> reels) {
         shadows.shadows, 
         nullptr, 
         &shadows.dst);
+    
+    // the plate
+    SDL_RenderCopy(renderer, plate, nullptr, nullptr);
+
+    // the lever
+    SDL_RenderCopy(
+        renderer, 
+        lever.textures.at(lever.state), 
+        nullptr, 
+        &lever.dst.at(lever.state));
+        
+    // the machine
+    SDL_RenderCopy(
+        renderer, 
+        machine.textures.at(machine.state), 
+        nullptr, 
+        &machine.dst.at(machine.state));
 
     // at last, present renderer
     SDL_RenderPresent(renderer);
@@ -245,6 +273,18 @@ void Graphics::lightStopButton() {
 
 void Graphics::killStopButton() {
     machine.state = 0;
+}
+
+void Graphics::handle_tokens(std::array<double, textures> coefs) {
+    std::deque<double> new_positions;
+    for (auto& coef : coefs) {
+        new_positions.push_back((extended_reel_h * coef) - token_dimensions);
+    }
+
+    for (auto& token : reel_tokens) {
+        token.y = new_positions.front();
+        new_positions.pop_front();
+    }
 }
 
 void Graphics::delay() const {

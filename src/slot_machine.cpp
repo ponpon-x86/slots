@@ -13,3 +13,7 @@ std::vector<Reel::Symbol> SlotMachine::getReelSymbols() const {
     }
     return syms;
 }
+
+SlotMachine::MachineState SlotMachine::getState() const {
+    return state;
+}

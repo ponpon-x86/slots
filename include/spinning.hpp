@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <array>
 #include "state.hpp"
 
 class Spinning : public State {

@@ -21,9 +21,10 @@ void Game::start() {
 
 void Game::run() {
     while (running) {
+        slot_machine.handle();
+        graphics.handle_tokens(slot_machine.getSpinCoefs());
         graphics.display(slot_machine.getReels());
         this->handle();
-        slot_machine.handle();
         graphics.delay();
     }
 }
