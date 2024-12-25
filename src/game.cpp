@@ -57,6 +57,7 @@ void Game::handle() {
                 timer.startMachineTimer();
                 graphics.killStopButton();
                 timer.startTwoStepTimer();
+                timer.stopCountdown();
                 slot_machine.stopReel(ReelIndex::FIRST);
             }
             break;
