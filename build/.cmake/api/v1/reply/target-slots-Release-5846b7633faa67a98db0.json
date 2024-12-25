@@ -1,0 +1,612 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "Release/slots.exe"
+		},
+		{
+			"path" : "Release/slots.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"include_directories",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"src/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 3,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 4,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 6,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 19,
+				"parent" : 5
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 9,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/MP28 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /O2 /Ob2 /DNDEBUG -MD"
+				},
+				{
+					"fragment" : "-std:c++20"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 4,
+					"define" : "FLAC__NO_DLL"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "LIBJPEG_STATIC"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "LZMA_API_STATIC"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "MIKMOD_STATIC"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "MODPLUG_STATIC"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "D:/programming/slots/build/src"
+				},
+				{
+					"path" : "D:/programming/slots/src"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "D:/programming/slots/include"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "D:/programming/slots/src/../include"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "C:/Users/Artyom/.conan2/p/sdl2094137a649cd/p/include"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "C:/Users/Artyom/.conan2/p/sdl2094137a649cd/p/include/SDL2"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "C:/Users/Artyom/.conan2/p/sdl_i023774f8efa4f/p/include"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "C:/Users/Artyom/.conan2/p/sdl_i023774f8efa4f/p/include/SDL2"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "C:/Users/Artyom/.conan2/p/b/sdl_m4609ccbccd010/p/include"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "C:/Users/Artyom/.conan2/p/b/sdl_m4609ccbccd010/p/include/SDL2"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "slots::@145eef247bfb46b6828c",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/MP28 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /O2 /Ob2 /DNDEBUG -MD",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-static /INCREMENTAL:NO /subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\sdl2094137a649cd\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\sdl_i023774f8efa4f\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\libti37f687fa4fc0c\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\zlib0e715158c1dfd\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\libde712e34aa8080e\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\xz_ut80f3ba813098e\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\libjp24d144e05a2e3\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\jbigfe9119c355d4c\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\zstdd8883d62300dc\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\libweb2503c6aa238e\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\libpn9bfcc2eca1f06\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\b\\sdl_m4609ccbccd010\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\flacddd54a5127b79\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\ogg0603e0d7ed2e4\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\mpg129608668cf86b8\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\libma7e99c0f862f33\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\vorbib3b87ba3196b8\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\opusf90b807b4950fc\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\opus1b5cd70a962ca\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\opens50aff95e2aa9e\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\libmi4ded77a1758b8\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-LIBPATH:C:\\Users\\Artyom\\.conan2\\p\\libmoe56118f59e7bb\\p\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\sdl_i023774f8efa4f\\p\\lib\\SDL2_image.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libti37f687fa4fc0c\\p\\lib\\tiffxx.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libti37f687fa4fc0c\\p\\lib\\tiff.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libde712e34aa8080e\\p\\lib\\deflatestatic.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\xz_ut80f3ba813098e\\p\\lib\\lzma.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\jbigfe9119c355d4c\\p\\lib\\jbig.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\zstdd8883d62300dc\\p\\lib\\zstd_static.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libjp24d144e05a2e3\\p\\lib\\libjpeg.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libpn9bfcc2eca1f06\\p\\lib\\libpng16_static.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libweb2503c6aa238e\\p\\lib\\webpmux.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libweb2503c6aa238e\\p\\lib\\webpdemux.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libweb2503c6aa238e\\p\\lib\\webp.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libweb2503c6aa238e\\p\\lib\\sharpyuv.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libweb2503c6aa238e\\p\\lib\\webpdecoder.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\b\\sdl_m4609ccbccd010\\p\\lib\\SDL2_mixer.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\sdl2094137a649cd\\p\\lib\\SDL2main.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\sdl2094137a649cd\\p\\lib\\SDL2-static.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "gdi32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "imm32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "ole32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "oleaut32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "version.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "uuid.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "setupapi.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "shell32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\flacddd54a5127b79\\p\\lib\\FLAC++.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\flacddd54a5127b79\\p\\lib\\FLAC.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\mpg129608668cf86b8\\p\\lib\\syn123.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\mpg129608668cf86b8\\p\\lib\\out123.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\mpg129608668cf86b8\\p\\lib\\mpg123.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "shlwapi.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libma7e99c0f862f33\\p\\lib\\mad.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\vorbib3b87ba3196b8\\p\\lib\\vorbisfile.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\vorbib3b87ba3196b8\\p\\lib\\vorbisenc.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\vorbib3b87ba3196b8\\p\\lib\\vorbis.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\opusf90b807b4950fc\\p\\lib\\opusfile.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\ogg0603e0d7ed2e4\\p\\lib\\ogg.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\opus1b5cd70a962ca\\p\\lib\\opus.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\opens50aff95e2aa9e\\p\\lib\\libssl.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\opens50aff95e2aa9e\\p\\lib\\libcrypto.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\zlib0e715158c1dfd\\p\\lib\\zlib.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "crypt32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "ws2_32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "user32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "advapi32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "bcrypt.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libmi4ded77a1758b8\\p\\lib\\mikmod.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "dsound.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "winmm.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\Users\\Artyom\\.conan2\\p\\libmoe56118f59e7bb\\p\\lib\\modplug.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "slots",
+	"nameOnDisk" : "slots.exe",
+	"paths" : 
+	{
+		"build" : "src",
+		"source" : "src"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/awarding.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/event_handler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/game.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/graphics.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/reel.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/slot_machine.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/sound.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/spinning.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/timer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/waiting.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

@@ -1,0 +1,10 @@
+^D:\PROGRAMMING\SLOTS\BUILD\CMAKEFILES\57ACE45C1BF15D7895277F823CDFEB65\GENERATE.STAMP.RULE
+setlocal
+C:\Users\Artyom\.conan2\p\cmake1927748c2604b\p\bin\cmake.exe -SD:/programming/slots -BD:/programming/slots/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/programming/slots/build/slots.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

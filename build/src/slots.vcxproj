@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B6FF3A6E-C765-3671-8370-7C1AD637AC50}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>slots</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\programming\slots\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">slots.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">slots</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\programming\slots\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">slots.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">slots</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\programming\slots\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">slots.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">slots</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\programming\slots\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">slots.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">slots</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\programming\slots\build\src;D:\programming\slots\src;D:\programming\slots\include;D:\programming\slots\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProcessorNumber>28</ProcessorNumber>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\programming\slots\build\src;D:\programming\slots\src;D:\programming\slots\include;D:\programming\slots\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\programming\slots\build\src;D:\programming\slots\src;D:\programming\slots\include;D:\programming\slots\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -static</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/programming/slots/build/Debug/slots.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/programming/slots/build/Debug/slots.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\programming\slots\build\src;D:\programming\slots\src;D:\programming\slots\include;D:\programming\slots\src\..\include;C:\Users\Artyom\.conan2\p\sdl2094137a649cd\p\include;C:\Users\Artyom\.conan2\p\sdl2094137a649cd\p\include\SDL2;C:\Users\Artyom\.conan2\p\sdl_i023774f8efa4f\p\include;C:\Users\Artyom\.conan2\p\sdl_i023774f8efa4f\p\include\SDL2;C:\Users\Artyom\.conan2\p\b\sdl_m4609ccbccd010\p\include;C:\Users\Artyom\.conan2\p\b\sdl_m4609ccbccd010\p\include\SDL2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProcessorNumber>28</ProcessorNumber>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LZMA_API_STATIC;LIBJPEG_STATIC;FLAC__NO_DLL;MIKMOD_STATIC;MODPLUG_STATIC;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LZMA_API_STATIC;LIBJPEG_STATIC;FLAC__NO_DLL;MIKMOD_STATIC;MODPLUG_STATIC;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\programming\slots\build\src;D:\programming\slots\src;D:\programming\slots\include;D:\programming\slots\src\..\include;C:\Users\Artyom\.conan2\p\sdl2094137a649cd\p\include;C:\Users\Artyom\.conan2\p\sdl2094137a649cd\p\include\SDL2;C:\Users\Artyom\.conan2\p\sdl_i023774f8efa4f\p\include;C:\Users\Artyom\.conan2\p\sdl_i023774f8efa4f\p\include\SDL2;C:\Users\Artyom\.conan2\p\b\sdl_m4609ccbccd010\p\include;C:\Users\Artyom\.conan2\p\b\sdl_m4609ccbccd010\p\include\SDL2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\programming\slots\build\src;D:\programming\slots\src;D:\programming\slots\include;D:\programming\slots\src\..\include;C:\Users\Artyom\.conan2\p\sdl2094137a649cd\p\include;C:\Users\Artyom\.conan2\p\sdl2094137a649cd\p\include\SDL2;C:\Users\Artyom\.conan2\p\sdl_i023774f8efa4f\p\include;C:\Users\Artyom\.conan2\p\sdl_i023774f8efa4f\p\include\SDL2;C:\Users\Artyom\.conan2\p\b\sdl_m4609ccbccd010\p\include;C:\Users\Artyom\.conan2\p\b\sdl_m4609ccbccd010\p\include\SDL2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\Artyom\.conan2\p\sdl_i023774f8efa4f\p\lib\SDL2_image.lib;C:\Users\Artyom\.conan2\p\libti37f687fa4fc0c\p\lib\tiffxx.lib;C:\Users\Artyom\.conan2\p\libti37f687fa4fc0c\p\lib\tiff.lib;C:\Users\Artyom\.conan2\p\libde712e34aa8080e\p\lib\deflatestatic.lib;C:\Users\Artyom\.conan2\p\xz_ut80f3ba813098e\p\lib\lzma.lib;C:\Users\Artyom\.conan2\p\jbigfe9119c355d4c\p\lib\jbig.lib;C:\Users\Artyom\.conan2\p\zstdd8883d62300dc\p\lib\zstd_static.lib;C:\Users\Artyom\.conan2\p\libjp24d144e05a2e3\p\lib\libjpeg.lib;C:\Users\Artyom\.conan2\p\libpn9bfcc2eca1f06\p\lib\libpng16_static.lib;C:\Users\Artyom\.conan2\p\libweb2503c6aa238e\p\lib\webpmux.lib;C:\Users\Artyom\.conan2\p\libweb2503c6aa238e\p\lib\webpdemux.lib;C:\Users\Artyom\.conan2\p\libweb2503c6aa238e\p\lib\webp.lib;C:\Users\Artyom\.conan2\p\libweb2503c6aa238e\p\lib\sharpyuv.lib;C:\Users\Artyom\.conan2\p\libweb2503c6aa238e\p\lib\webpdecoder.lib;C:\Users\Artyom\.conan2\p\b\sdl_m4609ccbccd010\p\lib\SDL2_mixer.lib;C:\Users\Artyom\.conan2\p\sdl2094137a649cd\p\lib\SDL2main.lib;C:\Users\Artyom\.conan2\p\sdl2094137a649cd\p\lib\SDL2-static.lib;gdi32.lib;imm32.lib;ole32.lib;oleaut32.lib;version.lib;uuid.lib;setupapi.lib;shell32.lib;C:\Users\Artyom\.conan2\p\flacddd54a5127b79\p\lib\FLAC++.lib;C:\Users\Artyom\.conan2\p\flacddd54a5127b79\p\lib\FLAC.lib;C:\Users\Artyom\.conan2\p\mpg129608668cf86b8\p\lib\syn123.lib;C:\Users\Artyom\.conan2\p\mpg129608668cf86b8\p\lib\out123.lib;C:\Users\Artyom\.conan2\p\mpg129608668cf86b8\p\lib\mpg123.lib;shlwapi.lib;C:\Users\Artyom\.conan2\p\libma7e99c0f862f33\p\lib\mad.lib;C:\Users\Artyom\.conan2\p\vorbib3b87ba3196b8\p\lib\vorbisfile.lib;C:\Users\Artyom\.conan2\p\vorbib3b87ba3196b8\p\lib\vorbisenc.lib;C:\Users\Artyom\.conan2\p\vorbib3b87ba3196b8\p\lib\vorbis.lib;C:\Users\Artyom\.conan2\p\opusf90b807b4950fc\p\lib\opusfile.lib;C:\Users\Artyom\.conan2\p\ogg0603e0d7ed2e4\p\lib\ogg.lib;C:\Users\Artyom\.conan2\p\opus1b5cd70a962ca\p\lib\opus.lib;C:\Users\Artyom\.conan2\p\opens50aff95e2aa9e\p\lib\libssl.lib;C:\Users\Artyom\.conan2\p\opens50aff95e2aa9e\p\lib\libcrypto.lib;C:\Users\Artyom\.conan2\p\zlib0e715158c1dfd\p\lib\zlib.lib;crypt32.lib;ws2_32.lib;user32.lib;advapi32.lib;bcrypt.lib;C:\Users\Artyom\.conan2\p\libmi4ded77a1758b8\p\lib\mikmod.lib;dsound.lib;winmm.lib;C:\Users\Artyom\.conan2\p\libmoe56118f59e7bb\p\lib\modplug.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/Artyom/.conan2/p/sdl2094137a649cd/p/lib;C:/Users/Artyom/.conan2/p/sdl2094137a649cd/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/sdl_i023774f8efa4f/p/lib;C:/Users/Artyom/.conan2/p/sdl_i023774f8efa4f/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/libti37f687fa4fc0c/p/lib;C:/Users/Artyom/.conan2/p/libti37f687fa4fc0c/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/zlib0e715158c1dfd/p/lib;C:/Users/Artyom/.conan2/p/zlib0e715158c1dfd/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/libde712e34aa8080e/p/lib;C:/Users/Artyom/.conan2/p/libde712e34aa8080e/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/xz_ut80f3ba813098e/p/lib;C:/Users/Artyom/.conan2/p/xz_ut80f3ba813098e/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/libjp24d144e05a2e3/p/lib;C:/Users/Artyom/.conan2/p/libjp24d144e05a2e3/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/jbigfe9119c355d4c/p/lib;C:/Users/Artyom/.conan2/p/jbigfe9119c355d4c/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/zstdd8883d62300dc/p/lib;C:/Users/Artyom/.conan2/p/zstdd8883d62300dc/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/libweb2503c6aa238e/p/lib;C:/Users/Artyom/.conan2/p/libweb2503c6aa238e/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/libpn9bfcc2eca1f06/p/lib;C:/Users/Artyom/.conan2/p/libpn9bfcc2eca1f06/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/b/sdl_m4609ccbccd010/p/lib;C:/Users/Artyom/.conan2/p/b/sdl_m4609ccbccd010/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/flacddd54a5127b79/p/lib;C:/Users/Artyom/.conan2/p/flacddd54a5127b79/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/ogg0603e0d7ed2e4/p/lib;C:/Users/Artyom/.conan2/p/ogg0603e0d7ed2e4/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/mpg129608668cf86b8/p/lib;C:/Users/Artyom/.conan2/p/mpg129608668cf86b8/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/libma7e99c0f862f33/p/lib;C:/Users/Artyom/.conan2/p/libma7e99c0f862f33/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/vorbib3b87ba3196b8/p/lib;C:/Users/Artyom/.conan2/p/vorbib3b87ba3196b8/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/opusf90b807b4950fc/p/lib;C:/Users/Artyom/.conan2/p/opusf90b807b4950fc/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/opus1b5cd70a962ca/p/lib;C:/Users/Artyom/.conan2/p/opus1b5cd70a962ca/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/opens50aff95e2aa9e/p/lib;C:/Users/Artyom/.conan2/p/opens50aff95e2aa9e/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/libmi4ded77a1758b8/p/lib;C:/Users/Artyom/.conan2/p/libmi4ded77a1758b8/p/lib/$(Configuration);C:/Users/Artyom/.conan2/p/libmoe56118f59e7bb/p/lib;C:/Users/Artyom/.conan2/p/libmoe56118f59e7bb/p/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -static</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/programming/slots/build/Release/slots.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/programming/slots/build/Release/slots.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\programming\slots\build\src;D:\programming\slots\src;D:\programming\slots\include;D:\programming\slots\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProcessorNumber>28</ProcessorNumber>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\programming\slots\build\src;D:\programming\slots\src;D:\programming\slots\include;D:\programming\slots\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\programming\slots\build\src;D:\programming\slots\src;D:\programming\slots\include;D:\programming\slots\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -static</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/programming/slots/build/MinSizeRel/slots.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/programming/slots/build/MinSizeRel/slots.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\programming\slots\build\src;D:\programming\slots\src;D:\programming\slots\include;D:\programming\slots\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProcessorNumber>28</ProcessorNumber>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\programming\slots\build\src;D:\programming\slots\src;D:\programming\slots\include;D:\programming\slots\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\programming\slots\build\src;D:\programming\slots\src;D:\programming\slots\include;D:\programming\slots\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -static</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/programming/slots/build/RelWithDebInfo/slots.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/programming/slots/build/RelWithDebInfo/slots.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\programming\slots\src\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/programming/slots/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Users\Artyom\.conan2\p\cmake1927748c2604b\p\bin\cmake.exe -SD:/programming/slots -BD:/programming/slots/build --check-stamp-file D:/programming/slots/build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\programming\slots\build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/programming/slots/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Users\Artyom\.conan2\p\cmake1927748c2604b\p\bin\cmake.exe -SD:/programming/slots -BD:/programming/slots/build --check-stamp-file D:/programming/slots/build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\programming\slots\build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/programming/slots/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Users\Artyom\.conan2\p\cmake1927748c2604b\p\bin\cmake.exe -SD:/programming/slots -BD:/programming/slots/build --check-stamp-file D:/programming/slots/build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\programming\slots\build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/programming/slots/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Users\Artyom\.conan2\p\cmake1927748c2604b\p\bin\cmake.exe -SD:/programming/slots -BD:/programming/slots/build --check-stamp-file D:/programming/slots/build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\programming\slots\build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\programming\slots\src\awarding.cpp" />
+    <ClCompile Include="D:\programming\slots\src\event_handler.cpp" />
+    <ClCompile Include="D:\programming\slots\src\game.cpp" />
+    <ClCompile Include="D:\programming\slots\src\graphics.cpp" />
+    <ClCompile Include="D:\programming\slots\src\main.cpp" />
+    <ClCompile Include="D:\programming\slots\src\reel.cpp" />
+    <ClCompile Include="D:\programming\slots\src\slot_machine.cpp" />
+    <ClCompile Include="D:\programming\slots\src\sound.cpp" />
+    <ClCompile Include="D:\programming\slots\src\spinning.cpp" />
+    <ClCompile Include="D:\programming\slots\src\timer.cpp" />
+    <ClCompile Include="D:\programming\slots\src\waiting.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\programming\slots\build\ZERO_CHECK.vcxproj">
+      <Project>{CEF88468-A89A-3E9F-A242-36AD14EEFE4B}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

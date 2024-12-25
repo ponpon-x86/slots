@@ -1,0 +1,10 @@
+^D:\PROGRAMMING\SLOTS\SRC\CMAKELISTS.TXT
+setlocal
+C:\Users\Artyom\.conan2\p\cmake1927748c2604b\p\bin\cmake.exe -SD:/programming/slots -BD:/programming/slots/build --check-stamp-file D:/programming/slots/build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
