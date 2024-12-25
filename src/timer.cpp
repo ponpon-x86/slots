@@ -25,6 +25,13 @@ void Timer::startTwoStepTimer() {
     }
 }
 
+void Timer::startCorrectionTimer() {
+    correction.activated = true;
+    if (correction.activated) {
+        correction.timer = clock();
+    }
+}
+
 void Timer::startAwardTimer() {
     award.activated = true;
     if (award.activated) {
@@ -58,6 +65,13 @@ Timer::Event Timer::handle() {
         if((double)(clock() - two_step.second.timer)/CLOCKS_PER_SEC >= 2) {
             two_step.second.activated = false;
             return Event::STOP_SECOND_TICK;
+        }
+    }
+
+    if (correction.activated) {
+        if((double)(clock() - correction.timer)/CLOCKS_PER_SEC >= 3) {
+            correction.activated = false;
+            return Event::CORRECTION_FINISHED;
         }
     }
 

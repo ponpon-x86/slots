@@ -12,6 +12,7 @@ public:
         MACHINE_EXPIRED,
         STOP_FIRST_TICK,
         STOP_SECOND_TICK,
+        CORRECTION_FINISHED,
         AWARD,
         NOTHING
     };
@@ -21,6 +22,7 @@ public:
     void startLeverTimer();
     void startMachineTimer();
     void startTwoStepTimer();
+    void startCorrectionTimer();
     void startAwardTimer();
 private:
     struct Trigger {
@@ -31,5 +33,6 @@ private:
     Trigger lever;
     Trigger machine;
     std::pair<Trigger, Trigger> two_step;
+    Trigger correction;
     Trigger award;
 };

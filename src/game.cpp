@@ -78,10 +78,13 @@ void Game::handle() {
             slot_machine.stopReel(ReelIndex::SECOND);
             break;
         case Timer::Event::STOP_SECOND_TICK:
-        {
             slot_machine.stopReel(ReelIndex::THIRD);
+            timer.startCorrectionTimer();
+            break;
+        case Timer::Event::CORRECTION_FINISHED:
+        {
             timer.startAwardTimer();
-            
+
             auto context = slot_machine.getContext();
             slot_machine.changeState<Awarding>(slot_machine.getReels());
             slot_machine.setContext(context);
@@ -90,6 +93,7 @@ void Game::handle() {
         case Timer::Event::AWARD:
         {
             graphics.resetLever();
+
             auto context = slot_machine.getContext();
             slot_machine.changeState<Waiting>(slot_machine.getReels());
             slot_machine.setContext(context);

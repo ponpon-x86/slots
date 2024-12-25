@@ -1,6 +1,32 @@
 #include "spinning.hpp"
 
+void Spinning::correction() {
+    for (int i = 0; i < reel_count; ++i) {
+        if (spinning.at(i) == false) {
+            double correction_coef = .1f;
+            if (fabs(spin_coefs.at(i) - .5f) < .25f)
+                correction_coef = .05f;
+            if (fabs(spin_coefs.at(i) - .5f) < .15f)
+                correction_coef = .03f;
+            if (fabs(spin_coefs.at(i) - .5f) < .10f)
+                correction_coef = .01f;
+            if (fabs(spin_coefs.at(i) - .5f) < .05f)
+                correction_coef = .005f;
+            if (fabs(spin_coefs.at(i) - .5f) < .01f)
+                correction_coef = .00005f;
+                
+            if (spin_coefs.at(i) > .5f) {
+                correction_coef *= (-1);
+            }
+
+            spin_coefs.at(i) += correction_coef;
+        }
+    }
+}
+
 void Spinning::handle() {
+    correction();
+
     spinning_speed = log(velocity) / 10;
     if (spinning_speed > max_speed) {
         spinning_speed = max_speed;
