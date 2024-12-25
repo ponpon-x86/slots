@@ -39,6 +39,17 @@ void Timer::startAwardTimer() {
     }
 }
 
+void Timer::startCountdown() {
+    countdown.activated = true;
+    if (countdown.activated) {
+        countdown.timer = clock();
+    }
+}
+
+void Timer::stopCountdown() {
+    countdown.activated = false;
+}
+
 Timer::Event Timer::handle() {
     if (lever.activated) {
         if((double)(clock() - lever.timer)/CLOCKS_PER_SEC >= 1) {
@@ -79,6 +90,13 @@ Timer::Event Timer::handle() {
         if((double)(clock() - award.timer)/CLOCKS_PER_SEC >= 5) {
             award.activated = false;
             return Event::AWARD;
+        }
+    }
+
+    if (countdown.activated) {
+        if((double)(clock() - countdown.timer)/CLOCKS_PER_SEC >= 5) {
+            countdown.activated = false;
+            return Event::COUNTDOWN_FINISHED;
         }
     }
 

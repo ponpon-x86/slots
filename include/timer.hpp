@@ -14,6 +14,7 @@ public:
         STOP_SECOND_TICK,
         CORRECTION_FINISHED,
         AWARD,
+        COUNTDOWN_FINISHED,
         NOTHING
     };
 
@@ -24,6 +25,9 @@ public:
     void startTwoStepTimer();
     void startCorrectionTimer();
     void startAwardTimer();
+
+    void startCountdown();
+    void stopCountdown();
 private:
     struct Trigger {
         clock_t timer;
@@ -35,4 +39,5 @@ private:
     std::pair<Trigger, Trigger> two_step;
     Trigger correction;
     Trigger award;
+    Trigger countdown;
 };

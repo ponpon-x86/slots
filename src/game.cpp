@@ -73,6 +73,7 @@ void Game::handle() {
             graphics.pullLeverDown();
             sound.playFullPullSound();
             graphics.lightStopButton();
+            timer.startCountdown();
             this->stoppable = true;
             break;
         case Timer::Event::MACHINE_EXPIRED:
@@ -101,6 +102,16 @@ void Game::handle() {
             slot_machine.setContext(context);
             break;
         }
+        case Timer::Event::COUNTDOWN_FINISHED:
+            sound.playAutoStopSound();
+            stoppable = false;
+            stopped = true;
+            sound.playManualStopSound();
+            timer.startMachineTimer();
+            graphics.killStopButton();
+            timer.startTwoStepTimer();
+            slot_machine.stopReel(ReelIndex::FIRST);
+            break;
         case Timer::Event::AWARD:
         {
             graphics.resetLever();

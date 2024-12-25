@@ -2,8 +2,10 @@
 
 void SlotMachine::handle() {
     current_state->handle();
+    /*
     for (auto& reel : current_state->getReels())
         std::cout << reel << "\n";
+    */
 }
 
 std::vector<Reel::Symbol> SlotMachine::getReelSymbols() const {

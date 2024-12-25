@@ -29,8 +29,6 @@ EventHandler::Event EventHandler::poll() {
 }
 
 bool EventHandler::inRect(const Point& mouse, const SDL_Rect* rect) const {
-    std::cout << "inRect. Mouse: " << mouse.x << " " << mouse.y << ", rect: " << rect->x << " " << rect->y << " " << rect->w << " " << rect->h << "\n";
-
     if (
         mouse.x > rect->x &&
         mouse.x < rect->x + rect->w &&
