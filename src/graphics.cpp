@@ -179,6 +179,9 @@ Graphics::Graphics() {
 
 Graphics::~Graphics() {
     SDL_DestroyTexture(background);
+    SDL_DestroyTexture(plate);
+    SDL_DestroyTexture(reels.reels);
+    SDL_DestroyTexture(shadows.shadows);
     for (auto& texture : machine.textures)
         SDL_DestroyTexture(texture);
     for (auto& texture : lever.textures)
